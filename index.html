@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="res/css/materialize.min.css">
+    <link rel="stylesheet" href="res/css/mstepper.min.css">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Multi-Step Form</title>
+</head>
+
+<body class="container">
+<form>
+    <ul class="stepper parallel horizontal">
+        <li class="step active">
+            <div class="step-title waves-effect waves-dark">Step 1</div>
+            <div class="step-content">
+                <div class="row">
+                    <div class='form-field col s12'>
+                        <p>Step with custom validation</p>
+                        <span>For this step we want to have a custom validator that checks if if at least one checkbox is checked</span>
+                        <p>
+                            <label for="checkbox1">
+                                <input name='checkbox1' type="checkbox" class="filled-in"
+                                       id="checkbox1" value='checkbox1'/>
+                                <span>Checkbox1</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="checkbox2">
+                                <input name='checkbox2' type="checkbox" class="filled-in"
+                                       id="checkbox2" value='checkbox2'/>
+                                <span>Checkbox2</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="waves-effect waves-dark btn next-step" data-validator="validateStepOne">CONTINUE
+                    </button>
+                    <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                </div>
+            </div>
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Step 2</div>
+            <div class="step-content">
+                <div class="row">
+                    <div class='form-field col s12'>
+                        <p>Step with no custom validation</p>
+                        <div class="input-field col s12">
+                            <input type="text" name="textfield" class="required validate" id="textfield"/>
+                            <label for="textfield">Random textfield</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+                    <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                </div>
+            </div>
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Step 3</div>
+            <div class="step-content">
+                <div class="row">
+                    <div class='form-field'>
+                        <p>Step with feedback and custom validation</p>
+                        <p>
+                            <label for="checkbox3">
+                                <input name='checkbox3' type="checkbox" class="filled-in"
+                                       id="checkbox3" value='checkbox3'/>
+                                <span>Checkbox3</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="checkbox4">
+                            <input name='checkbox4' type="checkbox" class="filled-in"
+                                   id="checkbox4" value='checkbox4'/>
+                                <span>Checkbox4</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" id="textfield2" name="textfield2" class="required validate"/>
+                        <label for="textfield2">This field should contain the word materialize</label>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <button class="waves-effect waves-dark btn next-step" data-feedback="nextStepThreeHandler"
+                            data-validator="validateStepThree">SUBMIT
+                    </button>
+                    <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                </div>
+            </div>
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Step 4</div>
+            <div class="step-content">
+                <div class="row">
+                    <div class='form-field'>
+                        <p>Submit phase</p>
+                    </div>
+                </div>
+                <div class="step-actions">
+                    <input type="submit" class="waves-effect waves-dark btn next-step" value="SUBMIT"/>
+                    <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</form>
+<script src="res/js/jquery.min.js"></script>
+<script src="res/js/materialize.min.js"></script>
+<script src="res/js/jquery.validate.min.js"></script>
+<!--<script src="res/js/mstepper.js"></script>-->
+<script src="res/js/polyfills.js"></script>
+<script src="res/js/index.js"></script>
+</body>
+</html>
